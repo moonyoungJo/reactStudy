@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--react library-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--jsx-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const TitleParts = (props) => (
+            <div style={{backgroundColor:'black', color: 'white'}}>
+                <h3>{props.title}</h3>
+            </div>
+        )
+        const ContentParts = (props) => (
+            <div style={{border: '1px solid blue', margin:15}}>
+                <div>감상평: {props.body}</div>
+            </div>
+        )
+        const Book = (props) => (
+            <div>
+                <TitleParts title={props.title} />
+                <ContentParts body={props.body} />
+            </div>
+        )
+        
+        ReactDOM.render((
+            <div>
+                <Book title='인어공주' body='하반신이 물고기인 인어 이야기' />
+                <Book title='백설공주' body='농약묻은 사과를 함부로 먹지 맙시다' />
+                <Book title='겨울왕국' body='빙수먹고싶다' />
+            </div>),
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>

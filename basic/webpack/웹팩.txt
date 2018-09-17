@@ -1,0 +1,9 @@
+웹팩 : 자바스크립트 또는 CSS 등의 리소스 파일을 하나로 합쳐주거나, 
+JSX처럼 특수한 기법으로 작성된 파일을 변환하는 도구
+
+npm install -g webpack webpack-cli
+webpack main.js  //dist/main.js로 파일 생성
+
+webpack.config.js 파일을 저장하면 webpack명령어로 쉽게 변환이 가능하다
+
+다양한 모듈과 함께 변환이 가능하다.

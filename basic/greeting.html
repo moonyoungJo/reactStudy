@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--react library-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--jsx-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+    const root = document.querySelector('#root')
+    const msg = getGreeting()
+    ReactDOM.render(
+        msg,
+        root
+    );
+
+    function getGreeting() {
+        const r = Math.floor(Math.random()*3)
+        if(r==0) return <p>오늘은 비가와요</p>
+        if(r==1) return <p>오늘은 맑아요</p>
+        if(r==2) return <p>오늘은 눈이와요</p>
+    }
+    </script>
+</body>
+</html>

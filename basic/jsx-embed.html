@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--react library-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--jsx-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="root1"></div>
+    <div id="root2"></div>
+    <div id="root3"></div>
+    <div id="root4"></div>
+
+    <script type="text/babel">
+        //jsx 태그 내부에 변수 넣기
+        const item = "사과"
+        const value = 600
+        const msg1 = <h1>{item}는 {value}원 입니다.</h1>
+        ReactDOM.render(msg1, document.getElementById('root1'));
+        
+        //jsx 태그 속성 값에 변수 넣기
+        const title="그림"
+        const imgUrl = "http://uta.pw/shodou/img/28/214.png"
+        const msg2 = <div>
+                        <h1>{title}</h1>
+                        <p><img src={imgUrl} /></p>
+                    </div>
+        ReactDOM.render(msg2, document.getElementById('root2'))
+
+        //함수의 반환값으로 DOM 내용 변경하기
+        function getDom1(){
+            return(
+                <div>
+                    <p>죄는 미워하되 사람은 미워하지 말라</p>
+                    <p>이것 또한 지나가리라</p>
+                </div>
+            )
+        }
+        ReactDOM.render(getDom1(), document.getElementById('root3'))
+
+        //JSX로 스타일 속성 지정하기 - 객체 이용
+        function getDom2(){
+            const css1 = {  //css style
+                "color":'red',
+                "background-color":'#f0f0ff',
+                "font-size":'2em'
+            }
+            const css2 = {  //javascript style
+                color: 'blue',
+                backgroundColor: '#f0f0ff',
+                fontSize: '2em'
+            }
+            return(
+                <div>
+                    <p style={css1}>죄는 미워하되 사람은 미워하지 말라</p>
+                    <p style={css2}>이것 또한 지나가리라</p>
+                </div>
+            )
+        }
+        ReactDOM.render(getDom2(), document.getElementById('root4'))
+    </script>
+</body>
+</html>

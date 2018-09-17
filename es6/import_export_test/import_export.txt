@@ -1,0 +1,20 @@
+import/export를 통해서 모듈을 이용할 수 있습니다.
+node의 겨우 아직 지원하지는 않지만, require로 모듈을 사용합니다.
+그러므로 import, export를 쓰려면 지금은 바벨을 이용해야 합니다.
+
+npm init
+npm install --save-dev babel-cli babel-preset-es2015
+.babelrc 만들기
+mkdir src
+mkdir dest
+src에 파일 생성...
+babel src -d dest
+node dest/main.js
+
+import문
+import {add, mul} from './calctest.js' : 내부의 특정 요소만 추출
+import * as ct from './calctest.js' : 모든 요소를 읽음. ct로 접근 ex)ct.add()
+import {add as addF} from './calctest.js'
+
+모듈의 기본 요소를 지정하기
+export default gobsem;

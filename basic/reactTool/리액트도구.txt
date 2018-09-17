@@ -1,0 +1,16 @@
+이전의 예제에서는 리액트/JSX를 위한 자바스크립트 라이브러리를 읽어들이도록 했습니다.
+하지만 JSX를 컴파일 하는데 시간이 걸려서 규모가 커지만 느려지게 될 것입니다.
+일반적으로는 미리 리액트/JSX를 위한 컴파일 환경을 구축하고 소스코드를 컴파일해 두는
+방법을 사용합니다.
+
+
+개발환경 구축
+npm install -g create-react-app 
+create-react-app hello    //필요한 모듈이 모두 설치
+cd hello
+npm start
+
+프로그램 공개하기
+npm run build
+npm install -g serve
+serve -s build

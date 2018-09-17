@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--react library-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!--jsx-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const dom = <div>
+                        <PhotoText image="jeju1" label="아름다운 제주도" />
+                        <PhotoText image="jeju2" label="아름다운 제주도 바다" />
+                        <PhotoText image="jeju3" label="아름다운 제주도의 유채꽃" />
+                    </div>
+        ReactDOM.render(dom, document.getElementById('root'))
+
+        function PhotoText(props) {
+            const url = "image/" + props.image + ".png"
+            const label = props.label
+            const boxStyle = {
+                border: "1px solid silver",
+                margin: "8px",
+                padding: "4px"
+            }
+            return <div style={boxStyle}>
+                        <img src={url} width="128" />
+                        <span>{label}</span>
+                    </div>
+        }
+    </script>
+</body>
+</html>
