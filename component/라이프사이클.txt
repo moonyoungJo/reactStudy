@@ -1,0 +1,21 @@
+리액트의 컴포넌트는 생성/파괴/상태 변화 등의 시점에 자동으로 호출되는
+메서드가 있습니다. 이러한 라이클을 이용하면 더 복잡한 컴포넌트를 
+만들 수 있습니다.
+
+컴포넌트 생성과 DOM에 마운트 : 최초에 한번
+constructor(props) : 객체가 생성될 때
+componentWillMount() : 컴포넌트가 DOM에 마운트되기 직전
+render() : 컴포넌트가 렌더링 될 때
+componentDidMount() : 컴포넌트가 DOM에 마운트 된 직후
+
+컴포넌트 업데이트 : 컴포넌트의 프로퍼티가 변경될 때
+componentWillReceiveProps(nextProps) : 컴포넌트의 프로퍼티가 변경될 때
+shouldComponentUpdate(nextPros, nextState) : 컴포넌트의 외관을 변경해도 좋을 지 판단할 때
+componentWillUpdate() : 컴포넌트가 업데이트되기 직전
+render() : 컴포넌트가 렌더링 될 때
+componentDidUpdate()
+
+DOM에서 언마운트
+componentWillUnmount()
+
+
