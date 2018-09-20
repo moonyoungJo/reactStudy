@@ -10,7 +10,7 @@ class BBSForm extends React.Component {
             body: ''
         }
     }
-    namdChanged (e) {
+    nameChanged (e) {
         this.setState({name: e.target.value})
     }
     bodyChanged (e) {
